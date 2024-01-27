@@ -1,7 +1,7 @@
-version: '3.8'
+version: '3'
 
 services:
-  web:
+  frontend:
     image: nginx:latest
     ports:
       - "8080:80"
@@ -11,9 +11,9 @@ services:
       - db
 
   db:
-    image: mysql:latest
+    image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: example_password
+      MYSQL_ROOT_PASSWORD: @#W45asd@
       MYSQL_DATABASE: sample_db
       MYSQL_USER: sample_user
       MYSQL_PASSWORD: sample_password
