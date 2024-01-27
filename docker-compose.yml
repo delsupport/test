@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  frontend:
+  ui:
     image: nginx:latest
     ports:
       - "8080:80"
@@ -10,15 +10,15 @@ services:
     depends_on:
       - db
 
-  db:
-    image: mysql:5.7
+  api:
+    image: devopseasylearning:001
     environment:
       MYSQL_ROOT_PASSWORD: @#W45asd@
       MYSQL_DATABASE: sample_db
       MYSQL_USER: sample_user
       MYSQL_PASSWORD: sample_password
     ports:
-      - "3306:3306"
+      - "3306:7878"
     volumes:
       - db_data:/var/lib/mysql
 
